@@ -44,7 +44,10 @@ else
         \ }
 
     for [s:markup, s:markers] in items(s:markup_markers)
-        execute 'syntax region org_'.s:markup.' start="\(^\|\W\)\zs'.s:markers.'\S\@=" end="\S\zs'.s:markers.'\(\W\|$\)\@=" contained containedin=org_paragraph'
+        execute 'syntax region org_'.s:markup.
+                    \ ' start="\(^\|\W\)\zs'.s:markers.'\ze\S"'.
+                    \ ' end="\S\zs'.s:markers.'\ze\(\W\|$\)"'.
+                    \ ' contained containedin=org_paragraph'
     endfor
 endif
 
