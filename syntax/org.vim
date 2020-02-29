@@ -33,12 +33,12 @@ if (s:conceal_aggressively == 1)
    syntax region org_code      matchgroup=org_border_code start="[^ \\]\zs`\|\(\(^\|[^\\]\)\zs\(\\\\\)\+\)\zs`\|\(^\|[^\\]\)\@<=`\S\@="        end="[^ \\]\zs'\|\(\(^\|[^\\]\)\zs\(\\\\\)\+\)\zs'\|[^\\]\zs'\S\@="     concealends oneline
    syntax region org_verbatim  matchgroup=org_border_verb start="[^ \\]\zs\~\|\(\(^\|[^\\]\)\zs\(\\\\\)\+\)\zs\~\|\(^\|[^\\]\)\@<=\~\S\@="     end="[^ \\]\zs\~\|\(\(^\|[^\\]\)\zs\(\\\\\)\+\)\zs\~\|[^\\]\zs\~\S\@="  concealends oneline
 else
-    syntax region org_bold      start="\S\zs\*\|\*\S\@="     end="\S\zs\*\|\*\S\@="  keepend oneline
-    syntax region org_italic    start="\S\zs\/\|\/\S\@="     end="\S\zs\/\|\/\S\@="  keepend oneline
-    syntax region org_underline start="\S\zs_\|_\S\@="       end="\S\zs_\|_\S\@="    keepend oneline
-    syntax region org_code      start="\S\zs=\|=\S\@="       end="\S\zs=\|=\S\@="    keepend oneline
-    syntax region org_code      start="\S\zs`\|`\S\@="       end="\S\zs'\|'\S\@="    keepend oneline
-    syntax region org_verbatim  start="\S\zs\~\|\~\S\@="     end="\S\zs\~\|\~\S\@="  keepend oneline
+    syntax region org_bold      start="\S\zs\*\|\*\S\@="     end="\S\zs\*\|\*\S\@="  keepend
+    syntax region org_italic    start="\S\zs\/\|\/\S\@="     end="\S\zs\/\|\/\S\@="  keepend
+    syntax region org_underline start="\S\zs_\|_\S\@="       end="\S\zs_\|_\S\@="    keepend
+    syntax region org_code      start="\S\zs=\|=\S\@="       end="\S\zs=\|=\S\@="    keepend
+    syntax region org_code      start="\S\zs`\|`\S\@="       end="\S\zs'\|'\S\@="    keepend
+    syntax region org_verbatim  start="\S\zs\~\|\~\S\@="     end="\S\zs\~\|\~\S\@="  keepend
 endif
 
 hi def org_bold      term=bold      cterm=bold      gui=bold
