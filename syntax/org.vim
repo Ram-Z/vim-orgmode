@@ -1,5 +1,5 @@
 " Support org authoring markup as closely as possible
-" (we're adding two markdown-like variants for =code= and blockquotes)
+" (we're adding two markdown-like variants for ~code~ and blockquotes)
 " -----------------------------------------------------------------------------
 "
 " Do we use aggresive conceal?
@@ -12,12 +12,12 @@ else
 endif
 
 " Inline markup {{{1
-" *bold*, /italic/, _underline_, +strike-through+, =code=, ~verbatim~
+" *bold*, /italic/, _underline_, +strike-through+, ~code~, =verbatim=
 " Note:
 " - /italic/ is rendered as reverse in most terms (works fine in gVim, though)
 " - +strike-through+ doesn't work on Vim / gVim
 " - the non-standard `code' markup is also supported
-" - =code= and ~verbatim~ are also supported as block-level markup, see below.
+" - ~code~ and =verbatim= are also supported as block-level markup, see below.
 " Ref: http://orgmode.org/manual/Emphasis-and-monospace.html
 "syntax match org_bold /\*[^ ]*\*/
 
@@ -38,9 +38,9 @@ else
     syntax region org_bold      start="\(^\|\W\)\zs\*\w\@=" end="\w\zs\*\(\W\|$\)\@=" contained containedin=org_paragraph
     syntax region org_italic    start="\(^\|\W\)\zs\/\w\@=" end="\w\zs\/\(\W\|$\)\@=" contained containedin=org_paragraph
     syntax region org_underline start="\(^\|\W\)\zs_\w\@="  end="\w\zs_\(\W\|$\)\@="  contained containedin=org_paragraph
-    syntax region org_code      start="\(^\|\W\)\zs=\w\@="  end="\w\zs=\(\W\|$\)\@="  contained containedin=org_paragraph
+    syntax region org_verbatim  start="\(^\|\W\)\zs=\w\@="  end="\w\zs=\(\W\|$\)\@="  contained containedin=org_paragraph
     syntax region org_code      start="\(^\|\W\)\zs`\w\@="  end="\w\zs'\(\W\|$\)\@="  contained containedin=org_paragraph
-    syntax region org_verbatim  start="\(^\|\W\)\zs\~\w\@=" end="\w\zs\~\(\W\|$\)\@=" contained containedin=org_paragraph
+    syntax region org_code      start="\(^\|\W\)\zs\~\w\@=" end="\w\zs\~\(\W\|$\)\@=" contained containedin=org_paragraph
 endif
 
 hi def org_bold      term=bold      cterm=bold      gui=bold
