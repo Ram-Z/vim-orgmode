@@ -278,6 +278,10 @@ syn match org_table_separator /\(^\s*|[-+]\+|\?\||\)/ contained
 hi def link org_table_separator Type
 
 " Hyperlinks: {{{1
+" TODO verify this, it's just been added without much thought to match plain
+" urls as urls instead of italic
+syntax match url "\a\+://\S\+" containedin=org_paragraph,org_list_item
+hi def link url Underlined
 syntax match hyperlink	"\[\{2}[^][]*\(\]\[[^][]*\)\?\]\{2}" contains=hyperlinkBracketsLeft,hyperlinkURL,hyperlinkBracketsRight containedin=ALL
 if (s:conceal_aggressively == 1)
     syntax match hyperlinkBracketsLeft	contained "\[\{2}#\?"     conceal
