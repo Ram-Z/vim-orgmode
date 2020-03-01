@@ -21,7 +21,7 @@ endif
 " Ref: http://orgmode.org/manual/Emphasis-and-monospace.html
 "syntax match org_bold /\*[^ ]*\*/
 
-syntax region org_paragraph start="^\s*$" end="\ze\n\n" keepend transparent
+syntax region org_paragraph start="^\ze\S" end="\ze\n\n" keepend transparent
 
 " FIXME: Always make org_bold syntax define before org_heading syntax
 "        to make sure that org_heading syntax got higher priority(help :syn-priority) than org_bold.
